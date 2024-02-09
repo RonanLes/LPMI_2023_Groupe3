@@ -20,7 +20,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon En-Tête HTML</title>
+    <title>Mon site de vente</title>
 
     <script src="script.js" defer></script>
 </head>
