@@ -18,15 +18,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Vérifie les informations de connexion
 
     include( $WidgetsPathing."connexion.php");
-    $req = $dbh->prepare("SELECT * FROM users WHERE username=:nom");
+    $req = $dbh->prepare("SELECT * FROM admin WHERE login=:nom");
     $req->bindParam(":nom", $username);
     $req->setFetchMode(PDO::FETCH_ASSOC);
     $req->execute();
     $ligne = $req->fetch(PDO::FETCH_ASSOC);
 
     if ($ligne["password"] == $password) {
-        $_SESSION["user_id"] = $ligne["username"];
-        $_SESSION["profil"] = $ligne["profil"];
+        $_SESSION["user_id"] = $ligne["login"];
+        $_SESSION["profil"] = true;
         include ($Vpathing."acceuil.php");
         exit();
     } else {
