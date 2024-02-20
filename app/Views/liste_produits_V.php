@@ -8,7 +8,7 @@
         #product-container {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
+            gap: 20px;x
         }
 
         .form-container {

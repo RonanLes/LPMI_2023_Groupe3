@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,38 +49,40 @@
         }
     </style>
 </head>
+
 <body>
 
-<form action="/index.php?page=modify_produit" method="post">
-    <label for="nom">Nom du Produit:</label>
-    <?php if (isset($_GET["id"])): ?>
-        <input type="text" id="nom" name="nom" value="<?= $article ?>" required><br>
-        <input type="hidden" id="produit_id" name="produit_id" value="<?= $article_id ?>" required><br>
-    <?php else: ?>
-        <select id="nom" name="nom" required onchange="redirectOnChange()">
-            <option value="" disabled selected>Choisir un produit</option>
-            <?php while ($ligne = $req->fetch(PDO::FETCH_ASSOC)): ?>
-                <option value="<?= $ligne["produit"] ?>">
-                    <?= $ligne["produit"] ?>
-                </option>
-            <?php endwhile; ?>
-        </select><br>
-    <?php endif; ?>
+    <form action="/index.php?page=modify_produit" method="post">
+        <label for="nom">Nom du Produit:</label>
+        <?php if (isset($_GET["id"])): ?>
+            <input type="text" id="nom" name="nom" value="<?= $article ?>" required><br>
+            <input type="hidden" id="produit_id" name="produit_id" value="<?= $article_id ?>" required><br>
+        <?php else: ?>
+            <select id="nom" name="nom" required onchange="redirectOnChange()">
+                <option value="" disabled selected>Choisir un produit</option>
+                <?php while ($ligne = $req->fetch(PDO::FETCH_ASSOC)): ?>
+                    <option value="<?= $ligne["produit"] ?>">
+                        <?= $ligne["produit"] ?>
+                    </option>
+                <?php endwhile; ?>
+            </select><br>
+        <?php endif; ?>
 
-    <label for="description">Description:</label>
-    <textarea id="description" name="description" required><?= $description ?></textarea><br>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required><?= $description ?></textarea><br>
 
-    <label for="prix">Prix:</label>
-    <input type="number" id="prix" name="prix" step="0.01" value="<?= $prix ?>" required><br>
+        <label for="prix">Prix:</label>
+        <input type="number" id="prix" name="prix" step="0.01" value="<?= $prix ?>" required><br>
 
-    <label for="categorie">Catégorie:</label>
-    <input id="categorie" name="categorie" value="<?= $categorie ?>" required><br>
+        <label for="categorie">Catégorie:</label>
+        <input id="categorie" name="categorie" value="<?= $categorie ?>" required><br>
 
-    <label for="lien_image">Lien de l'image:</label>
-    <input type="text" id="lien_image" name="image" value="<?= $image ?>" required><br>
+        <label for="lien_image">Lien de l'image:</label>
+        <input type="text" id="lien_image" name="image" value="<?= $image ?>" required><br>
 
-    <input type="submit" value="Modifier le Produit">
-</form>
+        <input type="submit" value="Modifier le Produit">
+    </form>
 
 </body>
+
 </html>
