@@ -58,7 +58,7 @@
             <input type="text" id="nom" name="nom" value="<?= $article ?>" required><br>
             <input type="hidden" id="produit_id" name="produit_id" value="<?= $article_id ?>" required><br>
         <?php else: ?>
-            <select id="nom" name="nom" required onchange="redirectOnChange()">
+            <select id="nom" name="nom" required onchange="redirectOnChange_M()">
                 <option value="" disabled selected>Choisir un produit</option>
                 <?php while ($ligne = $req->fetch(PDO::FETCH_ASSOC)): ?>
                     <option value="<?= $ligne["produit"] ?>">
