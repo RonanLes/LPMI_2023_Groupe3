@@ -45,6 +45,15 @@
             color: #555;
             margin-bottom: 10px;
         }
+
+        .add-to-cart-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -54,6 +63,7 @@
         <h1><?= $article ?></h1>
         <img src="<?= $image ?>" alt="image" />
         <p>Catégorie: <?= $categorie ?></p>
+        <button class="add-to-cart-btn">Ajouter au panier</button>
     </div>
     <div class="article-details">
         <p>Description: <?= $description ?></p>

@@ -12,4 +12,19 @@
     $prix = $ligne["prix"];
     $categorie = $ligne["categorie"];
     
+    if(isset($_POST['addtocart'])) {
+        // Get the product ID from the form
+        $productId = $_POST['product_id'];
+        
+        // Add the product to the cart
+        if(!isset($_SESSION['cart'])) {
+            $_SESSION['cart'] = array();
+        }
+        
+        $_SESSION['cart'][] = $productId;
+        
+        // Redirect to the cart page
+        header("Location: cart_V.php");
+        exit();
+    }
 ?>
