@@ -45,6 +45,7 @@
             }
             echo '<button type="button" onclick="window.location.href=\'' . $pathingPublic . 'index.php?page=login&deco=y\'">Se Déconnecter</button>';
         }
+        echo '<button type="button" onclick="window.location.href=\'' . $pathingPublic . 'index.php?page=CRUD\'">CRUD</button>';
         ?>
     </div>
 
