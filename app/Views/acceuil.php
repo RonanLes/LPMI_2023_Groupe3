@@ -42,7 +42,7 @@
     </form>
     <?php
     // Connexion à la base de données
-    $mysqli = new mysqli('localhost', 'root', 'password', 'php');
+    $mysqli = new mysqli('localhost', 'root', '', 'php');
 
     // Vérifier la connexion
     if ($mysqli->connect_error) {

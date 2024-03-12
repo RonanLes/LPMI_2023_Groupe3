@@ -63,7 +63,7 @@
         <h1><?= $article ?></h1>
         <img src="<?= $image ?>" alt="image" />
         <p>Catégorie: <?= $categorie ?></p>
-        <button class="add-to-cart-btn">Ajouter au panier</button>
+        <button class="add-to-cart-btn" onclick="window.location.href='/index.php?page=produit_C&id=<?= $article ?>&cart=true'">Ajouter au panier</button>
     </div>
     <div class="article-details">
         <p>Description: <?= $description ?></p>

@@ -43,6 +43,7 @@
                 echo '<button type="button" onclick="window.location.href=\'' . $pathingPublic . 'index.php?page=modify_produit\'">Modifier produit</button>';
                 echo '<button type="button" onclick="window.location.href=\'' . $pathingPublic . 'index.php?page=delete_produit\'">Désintégrer un produit</button>';
             }
+            echo '<button type="button" onclick="window.location.href=\'' . $pathingPublic . 'index.php?page=cart_C\'">Panier</button>';
             echo '<button type="button" onclick="window.location.href=\'' . $pathingPublic . 'index.php?page=login&deco=y\'">Se Déconnecter</button>';
             
         }
