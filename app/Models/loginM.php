@@ -17,18 +17,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Vérifie les informations de connexion
 
-    include( $WidgetsPathing."connexion.php");
+    include($WidgetsPathing . "connexion.php");
     $req = $dbh->prepare("SELECT * FROM admin WHERE login=:nom");
     $req->bindParam(":nom", $username);
     $req->setFetchMode(PDO::FETCH_ASSOC);
     $req->execute();
     $ligne = $req->fetch(PDO::FETCH_ASSOC);
 
-    if ($ligne["password"] == $password) {
-        $_SESSION["user_id"] = $ligne["login"];
-        $_SESSION["profil"] = true;
-        include ($Vpathing."acceuil.php");
-        exit();
+    if (isset($ligne["password"])) {
+        if ($ligne["password"] == $password) {
+            $_SESSION["user_id"] = $ligne["login"];
+            $_SESSION["profil"] = true;
+            include($Vpathing . "acceuil.php");
+            exit();
+        }
     } else {
         echo "Nom d'utilisateur ou mot de passe incorrect.";
     }

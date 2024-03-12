@@ -42,11 +42,11 @@
                 echo '<button type="button" onclick="window.location.href=\'' . $pathingPublic . 'index.php?page=create_produit\'">Ajouter produit</button>';
                 echo '<button type="button" onclick="window.location.href=\'' . $pathingPublic . 'index.php?page=modify_produit\'">Modifier produit</button>';
                 echo '<button type="button" onclick="window.location.href=\'' . $pathingPublic . 'index.php?page=delete_produit\'">Désintégrer un produit</button>';
+                echo '<button type="button" onclick="window.location.href=\'' . $pathingPublic . 'index.php?page=CRUD\'">CRUD</button>';
             }
             echo '<button type="button" onclick="window.location.href=\'' . $pathingPublic . 'index.php?page=login&deco=y\'">Se Déconnecter</button>';
-            
         }
-        echo '<button type="button" onclick="window.location.href=\'' . $pathingPublic . 'index.php?page=CRUD\'">CRUD</button>';
+       
         ?>
     </div>
 
