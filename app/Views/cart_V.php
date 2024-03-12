@@ -67,6 +67,7 @@
             <?php
             // Parcours de chaque produit dans le panier
             if(isset($_SESSION['cart'])){
+                
             foreach ($_SESSION['cart'] as $productId) {
 
                 $productName = $productId; // Récupérez le nom du produit à partir de la base de données ou d'une autre source

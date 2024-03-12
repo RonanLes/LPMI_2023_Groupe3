@@ -16,7 +16,11 @@
         // Get the product ID from the form
         $productId = $_GET['id'];
         if(isset($_SESSION['cart'])){
+
         array_push($_SESSION['cart'] ,$productId);}
+        else{
+            $_SESSION['cart'][] = $productId;
+        }
         
     }
 ?>
