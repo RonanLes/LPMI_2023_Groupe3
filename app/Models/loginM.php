@@ -7,7 +7,11 @@ if (session_status() != PHP_SESSION_ACTIVE) {
 if (isset($_GET["deco"])) {
     if ($_GET["deco"] == "y") {
         $_SESSION = array();
+        echo '<script>
+        var new_path = new URL(window.location.href).pathname + "?page=login";
+        window.location.href = new_path;</script>';
         echo "Vous avez été déconnecter";
+
     }
 }
 
@@ -28,7 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($ligne["password"] == $password) {
             $_SESSION["user_id"] = $ligne["login"];
             $_SESSION["profil"] = true;
-            include($Vpathing . "acceuil.php");
+            echo '<script>
+            var new_path = new URL(window.location.href).pathname + "?page=liste_produits";
+            window.location.href = new_path;</script>';
             exit();
         }
     } else {
