@@ -70,21 +70,16 @@
             <tr>
                 <th>Produit</th>
                 <th>Prix</th>
-                <th>Quantité</th>
-                <th>Total</th>
             </tr>
         </thead>
         <tbody>
             <?php
             // Parcours de chaque produit dans le panier
             if (isset($_SESSION['cart'])) {
-
-                foreach ($_SESSION['cart'] as $productId) {
-
-                    $productName = $productId; // Récupérez le nom du produit à partir de la base de données ou d'une autre source
-                    $productPrice = 29.99; // Récupérez le prix du produit à partir de la base de données ou d'une autre source
-                    $quantity = 2; // Utilisez une variable de quantité ou récupérez la quantité à partir de la base de données
-                    $total = $productPrice * $quantity;
+                $total = 0;
+                foreach ($_SESSION['cart'] as $product) {
+                    list($productName,$productPrice) = explode(":",$product); 
+                    $total += $productPrice;  
                     ?>
                     <tr>
                         <td>
@@ -93,19 +88,13 @@
                         <td>
                             <?php echo number_format($productPrice, 2) . '€'; ?>
                         </td>
-                        <td>
-                            <?php echo $quantity; ?>
-                        </td>
-                        <td>
-                            <?php echo number_format($total, 2) . '€'; ?>
-                        </td>
                     </tr>
                 <?php }
             } ?>
         </tbody>
     </table>
 
-    <p>Total du panier : <span id="total-panier">89.97€</span></p>
+    <p>Total du panier : <span id="total-panier"><?=$total. '€'?></span></p>
 
     <button>Passer la commande</button>
 </body>
