@@ -11,7 +11,6 @@
     <?php
     echo "Accueil";
     ?>
-
 </body>
 
 </html>
