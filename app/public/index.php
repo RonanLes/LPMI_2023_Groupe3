@@ -55,7 +55,7 @@
     if (isset($_GET["page"])) {
         include("../Controlers/" . $_GET["page"] . ".php");
     } else {
-        include("../Views/acceuil.php");
+        include("../Controlers/liste_produits.php");
     }
 
 

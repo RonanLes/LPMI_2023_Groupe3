@@ -94,7 +94,7 @@
 <div id="product-container">
     <div class="form-container">
         <h2>Formulaire de Recherche</h2>
-        <form method="get" action="">
+        <form method="get" action="index.php?page=liste_produits">
             <input type="text" name="search" placeholder="Rechercher par produit">
             <input type="submit" value="Rechercher">
         </form>
